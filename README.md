@@ -1,2 +1,3 @@
 # HackJusticeAPI
-An RESTful API for a hackathon, with Swagger UI
+
+RESTful API for a hackathon, with Swagger UI
