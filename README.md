@@ -1,3 +1,17 @@
-# HackJusticeAPI
+# Simple Social Media Platform
 
-RESTful API for a hackathon, with Swagger UI
+## About The Project
+
+It's a simple RESTful API made for a hackathon. It uses Swagger UI.
+
+## Built With
+
+- [Node.js](https://nodejs.org/en/)
+- [MongoDB](https://www.mongodb.com/)
+- [Express.js](https://expressjs.com/)
+- [Mongoose.js](https://mongoosejs.com/)
+- [Swagger UI](https://swagger.io/tools/swagger-ui/)
+
+## Demo
+
+Work in progress...
