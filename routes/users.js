@@ -179,6 +179,34 @@ router.get("/auth", auth, async (req, res) => {
 
 /**
  * @swagger
+ * /users:
+ *  get:
+ *    summary: Get all users details.
+ *    tags: [Users]
+ *    responses:
+ *      200:
+ *        description: User authorized
+ *      400:
+ *        description: Bad request
+ *      401:
+ *        description: Not authorized
+ *      404:
+ *        description: User not found
+ *      500:
+ *        description: Server error
+ */
+router.get("/", async (req, res) => {
+  try {
+    const users = await User.find().select("-password");
+    res.status(200).json(users);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server Error");
+  }
+});
+
+/**
+ * @swagger
  * /users/auth:
  *  post:
  *    summary: Log in the user.
