@@ -1,6 +1,7 @@
 /////////////// Server Setup /////////////////
 require("dotenv").config();
 const express = require("express");
+const cors = require("cors");
 const mongoose = require("mongoose");
 const swaggerJsDoc = require("swagger-jsdoc");
 const swaggerUI = require("swagger-ui-express");
@@ -25,8 +26,15 @@ const options = {
 
 const specs = swaggerJsDoc(options);
 
+// CORS policy
+var corsOptions = {
+  origin: "http://localhost:8080",
+  optionsSuccessStatus: 200, // For legacy browser support
+};
+
 // Express App
 const app = express();
+app.use(cors(corsOptions));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json({ extended: false }));
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(specs));
