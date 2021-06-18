@@ -24,7 +24,10 @@ const auth = require("../middleware/auth.js");
  *        icon:
  *          type: string
  *          description: Link for game icon.
- *        theory:
+ *        startText:
+ *          type: string
+ *          description: Some theory about the game.
+ *        endText:
  *          type: string
  *          description: Some theory about the game.
  *        order:
@@ -82,7 +85,9 @@ const auth = require("../middleware/auth.js");
  *                 type: string
  *               icon:
  *                 type: string
- *               theory:
+ *               startText:
+ *                 type: string
+ *               endText:
  *                 type: string
  *               order:
  *                 type: integer
@@ -135,12 +140,13 @@ router.post(
       }
 
       // Distruct request body
-      const { title, icon, order, theory, questions } = req.body;
+      const { title, icon, order, startText, endText, questions } = req.body;
       const newGame = new Game({
         title,
         icon,
         order,
-        theory,
+        startText,
+        endText,
         questions,
       });
 

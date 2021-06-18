@@ -14,7 +14,11 @@ const GameSchema = new mongoose.Schema({
     type: Number,
   },
 
-  theory: {
+  startText: {
+    type: String,
+  },
+
+  endText: {
     type: String,
   },
 
